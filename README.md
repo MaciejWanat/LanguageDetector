@@ -14,7 +14,7 @@ First, you have to build language models.
 ```
 ruby buildModel.rb
 ```
-Program will automaticly build 3-grams of every language in trainData folder (names of files should be languages names)
+Program will automaticly build 3-grams of every language in trainData folder (names of files should be languages names).
 You can also run this with an argument to build any n-gram model. For example, to build 4-grams:
 ```
 ruby buildModel.rb 4
@@ -24,7 +24,7 @@ To detect language in the input text:
 ruby detectLanguage.rb english.txt
 ```
 Your input text should be located in the testData folder.
-Without an extra parameter programm works for 3-grams. To run it for custom n-grams, use:
+Without an extra parameter program works for 3-grams. To run it for custom n-grams, use:
 ```
 ruby detectLanguage.rb english.txt 4
 ```

@@ -19,7 +19,7 @@ You can also run this with an argument to build any n-gram model. For example, t
 ```
 ruby buildModel.rb 4
 ```
-To detect language in the input text:
+To detect language in the input text (e.g. testData/english.txt):
 ```
 ruby detectLanguage.rb english.txt
 ```

@@ -13,8 +13,11 @@ Dir.foreach('./trainData') do |item|
 	text = File.open('traindata/' + item).read
 
 	text.gsub!(/\r\n?/, "\n")
-
-	arr = ngrams(3, text)
+	if(ARGV.empty?)
+		arr = ngrams(3, text)
+	else
+		arr = ngrams(ARGV[0].to_i, text)
+	end
 
 	arr.each do |word|
 	  results[word.join("")] += 1

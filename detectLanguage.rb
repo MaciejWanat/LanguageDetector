@@ -12,7 +12,11 @@ text = File.open('testData/' + ARGV[0]).read
 
 text.gsub!(/\r\n?/, "\n")
 
-arr = ngrams(3, text)
+if(ARGV.length == 1)
+	arr = ngrams(3, text)
+else
+	arr = ngrams(ARGV[1].to_i, text)
+end
 
 arr.each do |word|
   results[word.join("")] += 1

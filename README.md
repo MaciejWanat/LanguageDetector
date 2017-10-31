@@ -30,14 +30,14 @@ ruby detectLanguage.rb english.txt 4
 ```
 
 # WikiScraper
-WikiScraper is a program which lets you get text corpuses scrapped from Wikipedia article. By default its set for https://en.wikipedia.org/wiki/Earth, but you can change it for any Wikipedia side (it should be the english one).
-To turn on scraper
+WikiScraper is a program which lets you get text corpuses scraped from Wikipedia article, using [Nokogiri](http://www.nokogiri.org/) and [httparty](https://github.com/jnunemaker/httparty). By default its set for https://en.wikipedia.org/wiki/Earth, but you can change it for any Wikipedia side (it should be the english one).
+To turn on scraper:
 ```
 ruby wikiScraper.rb
 ```
 Program works in infinite loop. You have plenty of options to use:
 * exit - exits the program
 * languages - lists available languages for wikipedia site
-* language name - simply type in language corpus you would like to add, e.g. 'polish'. Language name should be typed in english.
+* language name - simply type in language corpus you would like to add, e.g. 'polish'. Language name should be typed in english. Program will scrap the text for you and save it into file.
 
 Note: Program supports only UTF-8 encoding.

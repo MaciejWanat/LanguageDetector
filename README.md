@@ -29,7 +29,7 @@ Without an extra parameter program works for 3-grams. To run it for custom n-gra
 ruby detectLanguage.rb english.txt 4
 ```
 
-#WikiScraper
+# WikiScraper
 WikiScraper is a program which lets you get text corpuses scrapped from Wikipedia article. By default its set for https://en.wikipedia.org/wiki/Earth, but you can change it for any Wikipedia side (it should be the english one).
 To turn on scraper
 ```

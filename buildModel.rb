@@ -15,8 +15,6 @@ Dir.foreach('./trainData') do |item|
 	text.gsub!(/\r\n?/, "\n")
 
 	arr = ngrams(3, text)
-	#arr = ngrams(3, "raz dwa trzy cztery pięć sześć raz dwa trzy.")
-	#File.open('clear.txt', 'w') { |file| file.write(text.gsub(/[[:punct:]]/, ' ').squeeze(' ').gsub(Regexp.union(" "), "_").gsub("\n",'')) }
 
 	arr.each do |word|
 	  results[word.join("")] += 1
@@ -24,11 +22,3 @@ Dir.foreach('./trainData') do |item|
 
 	File.open('models/' + item.split(".")[0].to_s + '.yml', 'w') { |file| file.write(results.to_yaml) }
 end
-
-
-
-'''
-text.each_line do |line|
-  print "#{line_num += 1} #{line}"
-end
-'''

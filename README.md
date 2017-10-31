@@ -2,14 +2,14 @@
 This is simple a implementation of Language Detector in Ruby. It uses n-grams to build language models, and then approximates compability of input with each model to predict the language.
 You can read about the n-grams [here](https://www.sitepoint.com/natural-language-processing-ruby-n-grams/).
 
-# Project
+## Project
 * models - contains models of languages
 * trainData - contains corpuses of training data
 * testData - file with available inputs
 * buildModel.rb - program that builds the model
 * detectLanguage.rb - program that detects language of input
 
-# Usage
+## Usage
 First, you have to build language models.
 ```
 ruby buildModel.rb

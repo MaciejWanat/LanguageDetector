@@ -10,8 +10,8 @@ def listLanguages(hash)
 	puts "\n"
 end
 
-languagesHash = Hash.new(0)
 scrapSource = 'https://en.wikipedia.org/wiki/Earth'
+languagesHash = Hash.new(0)
 
 page = HTTParty.get(scrapSource)
 parse_page = Nokogiri::HTML(page)
@@ -30,7 +30,7 @@ end
 
 languagesHash['english'] = scrapSource
 
-#languagesHash = languagesHash.sort_by{|key, value| key}
+languagesHash = Hash[ languagesHash.sort_by { |key, val| key } ]
 
 exits = false
 

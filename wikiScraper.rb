@@ -28,7 +28,7 @@ languages.to_s.each_line do |line|
 	end
 end
 
-languagesHash['english'] ='https://en.wikipedia.org/wiki/Earth'
+languagesHash['english'] = scrapSource
 
 #languagesHash = languagesHash.sort_by{|key, value| key}
 

@@ -7,6 +7,7 @@ end
 Dir.foreach('./trainData') do |item|
   	next if item == '.' or item == '..'
 
+  	rawName = item.split(".")[0].to_s
   	results = Hash.new(0)
 	line_num = 0 
 
@@ -23,5 +24,7 @@ Dir.foreach('./trainData') do |item|
 	  results[word.join("")] += 1
 	end
 
-	File.open('models/' + item.split(".")[0].to_s + '.yml', 'w') { |file| file.write(results.to_yaml) }
+	File.open('models/' + rawName + '.yml', 'w') { |file| file.write(results.to_yaml) }
+
+	puts 'Build model: ' + rawName
 end

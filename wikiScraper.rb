@@ -50,7 +50,7 @@ until exits == true
 		
 		File.open('trainData/' + target + '.txt', 'w') { |file| file.write(page) }
 
-		puts "\nSaved in trainData/" + target + ".txt!\n\n"
+		puts "\nScrapped language:" + target + "\nSaved in trainData/" + target + ".txt\n\n"
 
 	end	
 end

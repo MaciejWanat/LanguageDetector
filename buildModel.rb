@@ -9,9 +9,9 @@ Dir.foreach('./trainData') do |item|
 
   	rawName = item.split(".")[0].to_s
   	results = Hash.new(0)
-	line_num = 0 
+	line_num = 0
 
-	text = File.open('traindata/' + item).read
+	text = File.open('trainData/' + item).read
 
 	text.gsub!(/\r\n?/, "\n")
 	if(ARGV.empty?)

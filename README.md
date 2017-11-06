@@ -40,4 +40,4 @@ Program works in infinite loop. You have plenty of options to use:
 * languages - lists available languages for wikipedia site
 * language name - simply type in language corpus you would like to add, e.g. 'polish'. Language name should be typed in english. Program will scrap the text for you and save it into file.
 
-Note: Program supports only UTF-8 encoding.
+Note: Scraper supports ISO-8859-1 encoding.

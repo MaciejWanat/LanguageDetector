@@ -1,8 +1,5 @@
 require 'yaml'
-
-def ngrams(n, string)
-	string.downcase.gsub(/[[:punct:]]/, ' ').gsub(/[0-9]/, ' ').squeeze(' ').gsub(Regexp.union(" "), "_").gsub("\n",'').split("").each_cons(n).to_a
-end
+require_relative './lib/ngram.rb'
 
 Dir.foreach('./trainData') do |item|
   	next if item == '.' or item == '..'

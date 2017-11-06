@@ -41,7 +41,7 @@ until exits == true
 		exits = true
 	elsif(target == 'languages')
 		listLanguages(languagesHash)
-	elsif(languagesHash[target] == 0)
+	elsif(!languagesHash.key?(target))
 		puts "\nCannot find this language.\n"
 	else
 		page = HTTParty.get(languagesHash[target])

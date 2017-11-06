@@ -47,10 +47,10 @@ until exits == true
 		page = HTTParty.get(languagesHash[target])
 		parse_page = Nokogiri::HTML(page)
 		page = parse_page.at_css('[id="mw-content-text"]').text.to_s.force_encoding("ISO-8859-1").gsub("\n", ' ').squeeze(' ')
-		
+
 		File.open('trainData/' + target + '.txt', 'w') { |file| file.write(page) }
 
-		puts "\n-----------\nScrapped language:" + target + "\nSaved in trainData/" + target + ".txt\n-----------\n"
+		puts "\n-----------\nScraped language: " + target + "\nSaved in trainData/" + target + ".txt\n-----------\n\n"
 
 	end	
 end

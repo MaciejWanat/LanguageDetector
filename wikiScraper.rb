@@ -47,6 +47,13 @@ until exits == true
 		page = HTTParty.get(languagesHash[target])
 		parse_page = Nokogiri::HTML(page)
 		page = parse_page.at_css('[id="mw-content-text"]').text.to_s.force_encoding("ISO-8859-1").gsub("\n", ' ').squeeze(' ')
+		
+		#remove addnotations if there are any (usually english)
+		addnotationsMatch = /^.*?(displaystyle)/.match(page).to_s.sub(/(displaystyle)/, '')
+
+		if !addnotationsMatch.empty?
+			page = addnotationsMatch
+		end
 
 		File.open('trainData/' + target + '.txt', 'w') { |file| file.write(page) }
 

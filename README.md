@@ -8,6 +8,7 @@ You can read about the n-grams [here](https://www.sitepoint.com/natural-language
 * testData - file with available inputs
 * buildModel.rb - program that builds the model
 * detectLanguage.rb - program that detects language of input
+* demo.sh - program that runs a short demo
 
 ## Usage
 First, you have to build language models.
@@ -41,3 +42,12 @@ Program works in infinite loop. You have plenty of options to use:
 * language name - simply type in language corpus you would like to add, e.g. 'polish'. Language name should be typed in english. Program will scrap the text for you and save it into file.
 
 Note: Scraper supports ISO-8859-1 encoding.
+
+# Demo
+File "demo.sh" contains a program that runs a demonstration. If you want to see how all the programs work without running each one manually, simply run the code and follow the instructions.
+Demo instructions:
+* 1. Build models from pre-defined corpuses
+* 2. Detect language in english and spanish example input files
+* 3. Scrap additional language corpuses from wikipedia
+* 4. Build models from scrapped corpuses
+* 5. Detect language in english, spanish, russian and polish example input files

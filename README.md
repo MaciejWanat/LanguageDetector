@@ -46,8 +46,8 @@ Note: Scraper supports ISO-8859-1 encoding.
 # Demo
 File "demo.sh" contains a program that runs a demonstration. If you want to see how all the programs work without running each one manually, simply run the code and follow the instructions.
 Demo instructions:
-* 1. Build models from pre-defined corpuses
-* 2. Detect language in english and spanish example input files
-* 3. Scrap additional language corpuses from wikipedia
-* 4. Build models from scrapped corpuses
-* 5. Detect language in english, spanish, russian and polish example input files
+1. Build models from pre-defined corpuses
+2. Detect language in english and spanish example input files
+3. Scrap additional language corpuses from wikipedia
+4. Build models from scrapped corpuses
+5. Detect language in english, spanish, russian and polish example input files

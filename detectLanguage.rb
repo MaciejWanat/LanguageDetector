@@ -7,8 +7,6 @@ line_num = 0
 
 text = File.open('testData/' + ARGV[0]).read
 
-text.gsub!(/\r\n?/, "\n")
-
 if(ARGV.length == 1)
 	arr = ngrams(3, text)
 else
@@ -20,17 +18,17 @@ arr.each do |word|
 end
 
 Dir.foreach('./models') do |item|
-  	next if item == '.' or item == '..'
+  next if item == '.' or item == '..'
   	
-  	sum = 0;
+  sum = 0;
 
 	model = YAML.load_file('models/' + item)
 
   	results.each_key do |key|
-  		sum += model[key].to_i * results[key]
+  		sum += model[key].to_f * results[key].to_f
   	end	
 
-  	languageHash[item.split(".")[0].to_s] = sum
+  	languageHash[item.split(".")[0].to_s] = (sum * 10000).round(2)
 end
 
 languageHash = languageHash.sort_by{|key, value| value}.reverse
@@ -39,5 +37,5 @@ puts "\nI think your text is written in " + languageHash.first[0] + '!'
 puts 'This is my approximation of compatibility of your text with each of my models (the more points, the better compatibility): ' 
 
 languageHash.each do |key, value|
-    puts key + ' : ' + value.to_s
+  puts key + ' : ' + value.to_s
 end

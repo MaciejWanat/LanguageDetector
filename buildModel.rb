@@ -6,20 +6,23 @@ Dir.foreach('./trainData') do |item|
 
   	rawName = item.split(".")[0].to_s
   	results = Hash.new(0)
+  	arr = []
 	line_num = 0
 
-	text = File.open('trainData/' + item).read
-
-	text.gsub!(/\r\n?/, "\n")
 	if(ARGV.empty?)
-		arr = ngrams(3, text)
+		n = 3
 	else
-		arr = ngrams(ARGV[0].to_i, text)
+		n = ARGV[0].to_i
+	end	
+
+	File.readlines('trainData/' + item).each do |line|
+		arr = ngrams(n, line)
+		arr.each do |word|
+			results[word.join("")] += 1
+		end
 	end
 
-	arr.each do |word|
-	  results[word.join("")] += 1
-	end
+	results = normalizeByOccurance(results)
 
 	File.open('models/' + rawName + '.yml', 'w') { |file| file.write(results.to_yaml) }
 

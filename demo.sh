@@ -1,7 +1,7 @@
 #!/bin/bash
 function pause 
 {
-	printf "\n>>> Press any key to continue...\n"
+	printf "\n>>> Press enter to continue...\n"
 	read
 }
 

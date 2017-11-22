@@ -26,11 +26,11 @@ function checkEngSpa
 buildModel
 checkEngSpa
 
-printf "\n>>> Scraping additional language corpuses from wikipedia.\n"
+printf "\n>>> Running scraper to scrap additional language corpuses from wikipedia.\n"
 printf "\nWe'll be testing russian and polish input next, so it's good to scrap these corpuses. Still, you are free to scrap any language you like.\n"
 printf "\nCommand to scrap language - language name (e.g. 'polish')"
 printf "\nCommand to see available corpuses - 'languages'"
-printf "\nCommand to exit - 'exit'\n\n"
+printf "\nCommand to exit scraper and continue demo - 'exit'\n\n"
 ruby ./wikiScraper.rb 
 pause
 
@@ -45,5 +45,5 @@ pause
 printf ">>> Detect language for: polish.txt\n"
 ruby ./detectLanguage.rb polish.txt
 
-printf "\n>>> End of the demo. Press any key to exit.\n"
+printf "\n>>> End of the demo. Press enter to exit.\n"
 read
